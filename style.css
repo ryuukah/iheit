@@ -11,132 +11,135 @@ body {
 }
 
 body {
-  background: #f5ffff;
+  background: #191919;
   font-family: Arial, Helvetica, sans-serif;
-  color: #a8aaaa;
+  color: #a7aaaa;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
 }
 
-/* Top browser-like bar */
-.browser-bar {
-  height: 145px;
+/* Main box */
+.browser-bar,
+.sites {
   width: 100%;
+  max-width: 700px;
+}
+
+.browser-bar {
+  height: 90px;
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #b8bcbc;
-  background: #f8ffff;
-  padding: 0 14%;
+
+  padding: 0 28px;
+
+  background: #222222;
+  border: 1px solid #353535;
+  border-bottom: none;
+
+  border-radius: 14px 14px 0 0;
 }
 
+/* Menu */
 .menu-icon {
-  width: 34px;
+  width: 28px;
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  margin-right: 28px;
+  gap: 5px;
+  margin-right: 20px;
 }
 
 .menu-icon span {
   display: block;
-  width: 30px;
-  height: 3px;
-  background: #aeb2b2;
-  border-radius: 3px;
+  width: 24px;
+  height: 2px;
+  background: #888;
+  border-radius: 2px;
 }
 
+/* Address */
 .address {
   flex: 1;
-  font-size: 42px;
-  color: #a9adad;
-  letter-spacing: -1px;
+  font-size: 26px;
+  color: #999;
 }
 
 .external-icon {
-  font-size: 55px;
-  font-weight: 300;
-  color: #a5aaaa;
+  font-size: 34px;
+  color: #888;
 }
 
-/* Clickable site rows */
-.sites {
-  width: 100%;
-}
-
+/* Site buttons */
 .site-button {
-  position: relative;
-  height: 105px;
+  height: 95px;
   width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 28px;
+  gap: 20px;
 
   text-decoration: none;
-  color: #a7aaaa;
+  color: #999;
 
-  border-bottom: 2px solid #b8bcbc;
-  background: rgba(220, 252, 252, 0.55);
+  background: #222222;
+  border-left: 1px solid #353535;
+  border-right: 1px solid #353535;
+  border-bottom: 1px solid #353535;
 
-  font-size: 30px;
+  font-size: 24px;
 
   transition:
-    background-color 0.15s ease,
+    background 0.15s ease,
     color 0.15s ease;
 }
 
-.site-button:first-child {
-  border-top: none;
+.site-button:last-child {
+  border-radius: 0 0 14px 14px;
 }
 
 .site-button:hover {
-  background: #d8f7f7;
-  color: #777c7c;
+  background: #292929;
+  color: #d0d0d0;
 }
 
 .site-button:active {
-  background: #c9eeee;
+  background: #303030;
 }
 
 .arrow {
-  font-size: 55px;
+  font-size: 42px;
   line-height: 0;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: 200;
-  transform: translateY(-2px);
 }
 
 /* Mobile */
 @media (max-width: 700px) {
+  body {
+    padding: 25px 15px;
+  }
+
   .browser-bar {
-    height: 90px;
+    height: 75px;
     padding: 0 20px;
   }
 
-  .menu-icon {
-    width: 25px;
-    margin-right: 18px;
-    gap: 5px;
-  }
-
-  .menu-icon span {
-    width: 22px;
-    height: 2px;
-  }
-
   .address {
-    font-size: 25px;
+    font-size: 21px;
   }
 
   .external-icon {
-    font-size: 35px;
+    font-size: 29px;
   }
 
   .site-button {
-    height: 105px;
-    font-size: 24px;
-    gap: 18px;
+    height: 85px;
+    font-size: 21px;
   }
 
   .arrow {
-    font-size: 45px;
+    font-size: 36px;
   }
 }

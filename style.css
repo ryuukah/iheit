@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #f5ffff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #a8aaaa;
+}
+
+/* Top browser-like bar */
+.browser-bar {
+  height: 145px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #b8bcbc;
+  background: #f8ffff;
+  padding: 0 14%;
+}
+
+.menu-icon {
+  width: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-right: 28px;
+}
+
+.menu-icon span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #aeb2b2;
+  border-radius: 3px;
+}
+
+.address {
+  flex: 1;
+  font-size: 42px;
+  color: #a9adad;
+  letter-spacing: -1px;
+}
+
+.external-icon {
+  font-size: 55px;
+  font-weight: 300;
+  color: #a5aaaa;
+}
+
+/* Clickable site rows */
+.sites {
+  width: 100%;
+}
+
+.site-button {
+  position: relative;
+  height: 105px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+
+  text-decoration: none;
+  color: #a7aaaa;
+
+  border-bottom: 2px solid #b8bcbc;
+  background: rgba(220, 252, 252, 0.55);
+
+  font-size: 30px;
+
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.site-button:first-child {
+  border-top: none;
+}
+
+.site-button:hover {
+  background: #d8f7f7;
+  color: #777c7c;
+}
+
+.site-button:active {
+  background: #c9eeee;
+}
+
+.arrow {
+  font-size: 55px;
+  line-height: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .browser-bar {
+    height: 90px;
+    padding: 0 20px;
+  }
+
+  .menu-icon {
+    width: 25px;
+    margin-right: 18px;
+    gap: 5px;
+  }
+
+  .menu-icon span {
+    width: 22px;
+    height: 2px;
+  }
+
+  .address {
+    font-size: 25px;
+  }
+
+  .external-icon {
+    font-size: 35px;
+  }
+
+  .site-button {
+    height: 105px;
+    font-size: 24px;
+    gap: 18px;
+  }
+
+  .arrow {
+    font-size: 45px;
+  }
+}

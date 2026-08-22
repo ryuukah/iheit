@@ -1,145 +1,249 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html,
 body {
-  width: 100%;
-  min-height: 100%;
+    width: 100%;
+    min-height: 100%;
 }
 
 body {
-  background: #191919;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #a7aaaa;
+    background: #191919;
+    font-family: Georgia, "Times New Roman", serif;
 
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 8px;
 }
 
-/* Main box */
-.browser-bar,
-.sites {
-  width: 100%;
-  max-width: 700px;
+/* =========================
+   MAIN MENU
+========================= */
+
+.menu {
+    width: 100%;
+    max-width: 360px;
+
+    border: 1px solid #79a2a8;
+
+    background: #c6ede9;
 }
 
-.browser-bar {
-  height: 90px;
-  display: flex;
-  align-items: center;
+/* =========================
+   NAVIGATION HEADER
+========================= */
 
-  padding: 0 28px;
+.top-bar {
+    height: 70px;
 
-  background: #222222;
-  border: 1px solid #353535;
-  border-bottom: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  border-radius: 14px 14px 0 0;
+    padding: 0 18px;
+
+    border-bottom: 1px solid #709c9e;
+
+    /*
+       FADING PINK:
+       lighter at the top,
+       gradually darker toward the bottom.
+    */
+    background:
+        linear-gradient(
+            to bottom,
+            #e5f7f9 0%,
+            #d8f3f4 30%,
+            #c6eded 65%,
+            #b5e2e4 100%
+        );
 }
 
-/* Menu */
-.menu-icon {
-  width: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-right: 20px;
+/* =========================
+   HAMBURGER
+========================= */
+
+.hamburger {
+    width: 35px;
+
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+
+    color: #567b81;
+
+    opacity: 0.9;
 }
 
-.menu-icon span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: #888;
-  border-radius: 2px;
+/* =========================
+   NAVIGATION TITLE
+========================= */
+
+.title {
+    flex: 1;
+
+    text-align: center;
+
+    font-size: 21px;
+
+    color: #567b81;
+
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
-/* Address */
-.address {
-  flex: 1;
-  font-size: 26px;
-  color: #999;
+/* =========================
+   PNG INTERNET ICON
+========================= */
+
+.internet {
+    width: 35px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.external-icon {
-  font-size: 34px;
-  color: #888;
+.internet img {
+    width: 19px;
+    height: 19px;
+
+    display: block;
+
+    object-fit: contain;
 }
 
-/* Site buttons */
-.site-button {
-  height: 95px;
-  width: 100%;
+/* =========================
+   MENU BUTTONS
+========================= */
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+.menu-button {
+    width: 100%;
+    height: 48px;
 
-  text-decoration: none;
-  color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  background: #222222;
-  border-left: 1px solid #353535;
-  border-right: 1px solid #353535;
-  border-bottom: 1px solid #353535;
+    position: relative;
 
-  font-size: 24px;
+    text-decoration: none;
 
-  transition:
-    background 0.15s ease,
-    color 0.15s ease;
+    color: #476e70;
+
+    font-size: 18px;
+    font-weight: normal;
+
+    border-bottom: 1px solid #91b6bd;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ceeef1 0%,
+            #c1e7ea 100%
+        );
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
 }
 
-.site-button:last-child {
-  border-radius: 0 0 14px 14px;
+.menu-button:last-child {
+    border-bottom: none;
 }
 
-.site-button:hover {
-  background: #292929;
-  color: #d0d0d0;
-}
-
-.site-button:active {
-  background: #303030;
-}
+/* =========================
+   ARROWS
+========================= */
 
 .arrow {
-  font-size: 42px;
-  line-height: 0;
-  font-weight: 200;
+    position: absolute;
+
+    /*
+       Much farther away from the
+       center text than before.
+    */
+    left: 28%;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 28px;
+    font-weight: normal;
+
+    line-height: 1;
+
+    color: #567d80;
+
+    transform: translateY(-1px);
 }
 
-/* Mobile */
-@media (max-width: 700px) {
-  body {
-    padding: 25px 15px;
-  }
+/* =========================
+   HOVER
+========================= */
 
-  .browser-bar {
-    height: 75px;
-    padding: 0 20px;
-  }
+.menu-button:hover {
+    background:
+        linear-gradient(
+            to bottom,
+            #d5f0f4 0%,
+            #c8eaed 100%
+        );
 
-  .address {
-    font-size: 21px;
-  }
+    color: #3b5a5f;
+}
 
-  .external-icon {
-    font-size: 29px;
-  }
+.menu-button:hover .arrow {
+    color: #43656c;
+}
 
-  .site-button {
-    height: 85px;
-    font-size: 21px;
-  }
+/* =========================
+   CLICK
+========================= */
 
-  .arrow {
-    font-size: 36px;
-  }
+.menu-button:active {
+    background: #9bc4cf;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .menu {
+        width: calc(100% - 16px);
+        max-width: 360px;
+    }
+
+    .top-bar {
+        height: 62px;
+        padding: 0 14px;
+    }
+
+    .title {
+        font-size: 19px;
+    }
+
+    .hamburger {
+        font-size: 16px;
+    }
+
+    .internet img {
+        width: 17px;
+        height: 17px;
+    }
+
+    .menu-button {
+        height: 44px;
+        font-size: 17px;
+    }
+
+    .arrow {
+        left: 22%;
+        font-size: 26px;
+    }
 }
